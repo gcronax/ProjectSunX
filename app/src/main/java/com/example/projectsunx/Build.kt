@@ -76,7 +76,7 @@ fun build(navController: NavHostController, modifier: Modifier = Modifier,
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
     Scaffold(
-        modifier = Modifier.fillMaxWidth().height(834.dp),
+        modifier = Modifier.fillMaxSize().height(834.dp),
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { paddingValues ->
         LazyVerticalStaggeredGrid(

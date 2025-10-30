@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity() {
                                 )
                                 Button(
                                     onClick ={
-
+                                        navController.navigate("Primera")
                                     },
                                     colors = ButtonDefaults.buttonColors(
                                         containerColor = Color(0xFFE0D9F7)
@@ -116,7 +116,7 @@ class MainActivity : ComponentActivity() {
                                 Spacer(modifier = Modifier.height(16.dp))
                                 Button(
                                     onClick ={
-
+                                        navController.navigate("Segunda")
                                     },
                                     colors = ButtonDefaults.buttonColors(
                                         containerColor = Color(0xFFE0D9F7)
