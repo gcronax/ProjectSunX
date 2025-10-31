@@ -36,6 +36,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -173,8 +175,11 @@ class MainActivity : ComponentActivity() {
                     },
 
                 ) {
+                    val snackbarHostState = remember { SnackbarHostState() }
+
                     Scaffold(modifier = Modifier.fillMaxSize(),
-                        bottomBar ={
+                        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
+                                bottomBar ={
                             BottomAppBar(
                                 containerColor = Color(0xFFD31111),
                                 contentColor = Color.White,
@@ -228,8 +233,8 @@ class MainActivity : ComponentActivity() {
                     { innerPadding ->
 
                         NavHost(navController = navController, startDestination = "Primera") {
-                            composable("Primera") {build(navController,
-                                Modifier.padding(innerPadding),{imagenPasarela = it})  }
+                            composable("Primera") {Build(navController,
+                                Modifier.padding(innerPadding),{imagenPasarela = it},snackbarHostState)  }
                             composable("Segunda") {info(navController,
                                 Modifier.padding(innerPadding),imagenPasarela)  }
 

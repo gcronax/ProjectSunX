@@ -61,8 +61,8 @@ data class cartas(
 
 
 @Composable
-fun build(navController: NavHostController, modifier: Modifier = Modifier,
-          direccion: (Int) -> Unit) {
+fun Build(navController: NavHostController, modifier: Modifier = Modifier,
+          direccion: (Int) -> Unit,snackbarHostState: SnackbarHostState ) {
     val cartaSelect = remember {
         mutableStateListOf(
             cartas("Corona solar", R.drawable.corona_solar),
@@ -74,15 +74,9 @@ fun build(navController: NavHostController, modifier: Modifier = Modifier,
         )
     }
     val scope = rememberCoroutineScope()
-    val snackbarHostState = remember { SnackbarHostState() }
-    Scaffold(
-        modifier = Modifier.fillMaxSize().height(834.dp),
-        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
-    ) { paddingValues ->
         LazyVerticalStaggeredGrid(
-            modifier = Modifier.fillMaxSize()
-
-                .padding(paddingValues),
+            modifier = modifier.fillMaxSize(),
+//                .height(834.dp),
             columns = StaggeredGridCells.Fixed(2),
             content = {
                 items(cartaSelect.size) { indice ->
@@ -177,5 +171,5 @@ fun build(navController: NavHostController, modifier: Modifier = Modifier,
                 }
             }
         )
-    }
+
 }
