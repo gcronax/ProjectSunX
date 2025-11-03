@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.material.icons.Icons
@@ -73,11 +75,11 @@ fun Build(navController: NavHostController, modifier: Modifier = Modifier,
             cartas("Manchasolar", R.drawable.manchasolar)
         )
     }
-    val scope = rememberCoroutineScope()
-        LazyVerticalStaggeredGrid(
+        val scope = rememberCoroutineScope()
+        LazyVerticalGrid(
             modifier = modifier.fillMaxSize(),
 //                .height(834.dp),
-            columns = StaggeredGridCells.Fixed(2),
+            columns = GridCells.Fixed(2),
             content = {
                 items(cartaSelect.size) { indice ->
                     Card(
