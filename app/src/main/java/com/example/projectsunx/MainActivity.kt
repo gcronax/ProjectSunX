@@ -48,6 +48,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -96,23 +97,22 @@ class MainActivity : ComponentActivity() {
                                     shape = RoundedCornerShape(16.dp),
                                     modifier = Modifier
                                         .height(50.dp)
-                                        .fillMaxWidth().padding(horizontal = 16.dp)
+                                        .fillMaxWidth()
+                                        .padding(horizontal = 16.dp)
                                 ) {
-                                    Row(horizontalArrangement = Arrangement.Start,
-//                                        horizontalArrangement = Arrangement.SpaceBetween
-                                    ) {
-                                        Icon(
-                                        imageVector = Icons.Default.Build,
-                                        contentDescription = "Build",
-                                        tint = Color.Black
-                                        )
-                                        Spacer(modifier = Modifier.width(8.dp))
-                                        Text(
-                                            text = "Build",
-                                            fontSize = 16.sp,
-                                            color = Color.Black
-                                        )
-                                    }
+
+                                    Icon(
+                                    imageVector = Icons.Default.Build,
+                                    contentDescription = "Build",
+                                    tint = Color.Black
+                                    )
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    Text(
+                                        text = "Build",
+                                        fontSize = 16.sp,
+                                        color = Color.Black
+                                    )
+
 
                                 }
                                 Spacer(modifier = Modifier.height(16.dp))
